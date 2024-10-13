@@ -12,8 +12,18 @@ config_version=5
 
 config/name="TTT_2"
 run/main_scene="res://MainScreen.tscn"
-config/features=PackedStringArray("4.2", "Mobile")
+config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/mode=2
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
+[dotnet]
+
+project/assembly_name="TTT_2"
 
 [rendering]
 
