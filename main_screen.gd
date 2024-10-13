@@ -1,12 +1,5 @@
 extends Node2D
 
-var myBool = false
-var unmyBool = false
-
-const zoomed_in = Vector2(1, 1)  # Zoom level for zooming in
-const zoomed_out = Vector2(2, 2)  # Zoom level for zooming out
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
 

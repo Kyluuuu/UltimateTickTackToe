@@ -25,6 +25,10 @@ window/stretch/aspect="expand"
 
 project/assembly_name="TTT_2"
 
+[global_group]
+
+ZoomInButtons=""
+
 [rendering]
 
 renderer/rendering_method="mobile"
