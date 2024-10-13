@@ -880,4 +880,13 @@ offset_right = 395.0
 offset_bottom = 214.0
 script = ExtResource("4_raauo")
 
+[node name="Sliding back button" type="Button" parent="."]
+offset_left = -400.0
+offset_top = 85.0
+offset_right = -288.0
+offset_bottom = 161.0
+text = "BACK"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Sliding back button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Sliding back button" to="." method="_on_sliding_back_button_pressed"]
