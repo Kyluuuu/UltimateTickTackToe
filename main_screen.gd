@@ -17,6 +17,13 @@ func _process(delta: float) -> void:
 		moveCam()
 	if unmyBool:
 		unmoveCam()
+		
+func _input(event):
+
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_ESCAPE:
+			get_tree().quit(0)
+	pass;
 
 
 func _on_button_pressed() -> void:
