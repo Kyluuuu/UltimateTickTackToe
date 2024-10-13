@@ -3,6 +3,9 @@ extends Node2D
 var myBool = false
 var unmyBool = false
 
+const zoomed_in = Vector2(0.5, 0.5)  # Zoom level for zooming in
+const zoomed_out = Vector2(2, 2)  # Zoom level for zooming out
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -32,8 +35,9 @@ func moveCam() -> void:
 	button_position.y += button.size.y/2
 	var camera = $Camera2D
 	camera.global_position = camera.position.lerp(button_position, 0.05)
+	camera.zoom = camera.zoom.lerp(zoomed_out, 0.05)
 		
 func unmoveCam() -> void:
 	var camera = $Camera2D
-	print("asdas")
-	camera.global_position = camera.position.lerp(Vector2(575, 375), 0.05)
+	camera.global_position = camera.position.lerp(Vector2(500, 320), 0.05)
+	camera.zoom = camera.zoom.lerp(zoomed_in, 0.05)
