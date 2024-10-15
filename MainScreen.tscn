@@ -14,6 +14,19 @@ shader = ExtResource("1_t5wjj")
 material = SubResource("ShaderMaterial_lfgdx")
 script = ExtResource("1_n0k8k")
 
+[node name="Button" type="Button" parent="."]
+offset_left = 226.0
+offset_top = 45.0
+offset_right = 395.0
+offset_bottom = 214.0
+script = ExtResource("4_raauo")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="Node2D"]
+position = Vector2(573, 320)
+script = ExtResource("2_h8848")
+
 [node name="Game" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -896,17 +909,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(573, 320)
-script = ExtResource("2_h8848")
-
-[node name="Button" type="Button" parent="."]
-offset_left = 226.0
-offset_top = 45.0
-offset_right = 395.0
-offset_bottom = 214.0
-script = ExtResource("4_raauo")
-
 [node name="Sliding back button" type="Button" parent="."]
 offset_left = -400.0
 offset_top = 144.0
@@ -915,8 +917,16 @@ offset_bottom = 220.0
 text = "BACK"
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(969, 124)
+position = Vector2(1031, 93)
 texture = ExtResource("6_num2b")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 18.0
+offset_top = 40.0
+offset_right = 172.0
+offset_bottom = 158.0
+text = "EUEGENE
+"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Sliding back button" to="." method="_on_button_pressed"]
