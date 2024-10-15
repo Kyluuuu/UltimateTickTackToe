@@ -1,7 +1,6 @@
 extends Node2D
 
 var zoomingIn = false
-var zoomingOut = false
 
 var camera
 
@@ -18,7 +17,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if zoomingIn:
 		zoomIn()
-	if zoomingOut:
+	else:
 		zoomOut()
 
 	
@@ -30,31 +29,24 @@ func zoomIn() -> void:
 	camera.global_position = camera.position.lerp(button_position, 0.05)
 	camera.zoom = camera.zoom.lerp(zoomed_in, 0.05)
 		
-	var slideButton = $"SlidingBackButton"
-	#slideButton.position = slideButton.position.lerp(Vector2(67, 85), 0.05)
+	var slideButton = $"BackControl"
+	var locationBackButton = Vector2(button_position.x - 250, button_position.y - 38)
+	slideButton.position = slideButton.position.lerp(locationBackButton, 0.05)
 	
 func zoomOut() -> void:
 	camera.global_position = camera.position.lerp(Vector2(500, 320), 0.05)
 	camera.zoom = camera.zoom.lerp(zoomed_out, 0.05)
 	
-	var slideButton = $"SlidingBackButton"
-	#slideButton.position = slideButton.position.lerp(Vector2(-400, 85), 0.05)
+	var slideButton = $"BackControl"
+	slideButton.position = slideButton.position.lerp(Vector2(-400, 85), 0.05)
 
 
 func _on_sliding_back_button_pressed():
-	zoomingIn = true
-	zoomingOut = false
+	zoomingIn = false;
 	
 func processButton(button):
 	currentButton = button
-	if !zoomingIn and !zoomingOut:
-		zoomingIn = true
-	elif zoomingOut:
-		zoomingOut = false
-		zoomingIn = true
-	elif zoomingIn:
-		zoomingOut = true
-		zoomingIn = false
+	zoomingIn = true;
 
 
 func _on_zoom_in_button_1_pressed() -> void:

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddneksnqngx5g"]
+[gd_scene load_steps=8 format=3 uid="uid://ddneksnqngx5g"]
 
 [ext_resource type="Script" path="res://control.gd" id="1_kua3q"]
 [ext_resource type="Script" path="res://main_screen.gd" id="1_n0k8k"]
 [ext_resource type="Shader" path="res://testShader.gdshader" id="1_t5wjj"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="2_h8848"]
 [ext_resource type="Script" path="res://camera_controller.gd" id="3_aiqyb"]
+[ext_resource type="Script" path="res://sliding_back_button.gd" id="6_k5vro"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lfgdx"]
 shader = ExtResource("1_t5wjj")
@@ -13,22 +14,17 @@ shader = ExtResource("1_t5wjj")
 material = SubResource("ShaderMaterial_lfgdx")
 script = ExtResource("1_n0k8k")
 
-[node name="CameraController" type="Node2D" parent="."]
-script = ExtResource("3_aiqyb")
-
-[node name="Camera2D" type="Camera2D" parent="CameraController"]
-position = Vector2(573, 320)
-script = ExtResource("2_h8848")
-
 [node name="Game" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 200.0
-offset_top = 19.0
-offset_right = 800.0
-offset_bottom = 619.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 242.0
+offset_top = 28.0
+offset_right = 842.0
+offset_bottom = 628.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -974,12 +970,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Sliding back button" type="Button" parent="."]
-offset_left = -400.0
-offset_top = 144.0
-offset_right = -288.0
-offset_bottom = 220.0
+[node name="CameraController" type="Node2D" parent="."]
+script = ExtResource("3_aiqyb")
+
+[node name="Camera2D" type="Camera2D" parent="CameraController"]
+position = Vector2(573, 320)
+script = ExtResource("2_h8848")
+
+[node name="BackControl" type="Control" parent="CameraController"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -554.0
+offset_top = 90.0
+offset_right = -455.0
+offset_bottom = 146.0
+
+[node name="ColorRect" type="ColorRect" parent="CameraController/BackControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.79888, 0, 0.221495, 1)
+
+[node name="Sliding back button" type="Button" parent="CameraController/BackControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "BACK"
+flat = true
+script = ExtResource("6_k5vro")
 
 [connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_1_pressed"]
 [connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control2/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_2_pressed"]
@@ -990,5 +1014,4 @@ text = "BACK"
 [connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control7/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_7_pressed"]
 [connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_8_pressed"]
 [connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_9_pressed"]
-[connection signal="pressed" from="Sliding back button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Sliding back button" to="." method="_on_sliding_back_button_pressed"]
+[connection signal="pressed" from="CameraController/BackControl/Sliding back button" to="CameraController" method="_on_sliding_back_button_pressed"]
