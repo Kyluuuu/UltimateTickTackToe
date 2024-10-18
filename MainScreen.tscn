@@ -1,0 +1,1018 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddneksnqngx5g"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_kua3q"]
+[ext_resource type="Script" path="res://main_screen.gd" id="1_n0k8k"]
+[ext_resource type="Shader" path="res://testShader.gdshader" id="1_t5wjj"]
+[ext_resource type="Script" path="res://camera_2d.gd" id="2_h8848"]
+[ext_resource type="Script" path="res://camera_controller.gd" id="3_aiqyb"]
+[ext_resource type="Script" path="res://sliding_back_button.gd" id="6_k5vro"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lfgdx"]
+shader = ExtResource("1_t5wjj")
+
+[node name="Node2D" type="Node2D"]
+material = SubResource("ShaderMaterial_lfgdx")
+script = ExtResource("1_n0k8k")
+
+[node name="Game" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 242.0
+offset_top = 28.0
+offset_right = 842.0
+offset_bottom = 628.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_kua3q")
+
+[node name="ColorRect" type="ColorRect" parent="Game"]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control2" type="Control" parent="Game"]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Game/Control2"]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="GridContainer" type="GridContainer" parent="Game/Control2/MarginContainer"]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 3
+
+[node name="Control" type="Control" parent="Game/Control2/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="Game/Control2/MarginContainer/GridContainer/Control"]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Game/Control2/MarginContainer/GridContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Control" type="Control" parent="Game/Control2/MarginContainer/GridContainer/Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="Game/Control2/MarginContainer/GridContainer/Control/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 7
+theme_override_constants/v_separation = 7
+columns = 3
+
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button2" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button3" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button4" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button5" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button6" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button7" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button8" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button9" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control/MarginContainer/Control" groups=["ZoomInButtons"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control2" type="Control" parent="Game/Control2/MarginContainer/GridContainer"]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="Game/Control2/MarginContainer/GridContainer/Control2"]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Game/Control2/MarginContainer/GridContainer/Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Control" type="Control" parent="Game/Control2/MarginContainer/GridContainer/Control2/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="Game/Control2/MarginContainer/GridContainer/Control2/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 7
+theme_override_constants/v_separation = 7
+columns = 3
+
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control2/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button2" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control2/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button3" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control2/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button4" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control2/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button5" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control2/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button6" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control2/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button7" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control2/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button8" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control2/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button9" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control2/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control2/MarginContainer/Control" groups=["ZoomInButtons"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control3" type="Control" parent="Game/Control2/MarginContainer/GridContainer"]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="Game/Control2/MarginContainer/GridContainer/Control3"]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Game/Control2/MarginContainer/GridContainer/Control3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Control" type="Control" parent="Game/Control2/MarginContainer/GridContainer/Control3/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="Game/Control2/MarginContainer/GridContainer/Control3/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 7
+theme_override_constants/v_separation = 7
+columns = 3
+
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control3/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button2" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control3/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button3" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control3/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button4" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control3/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button5" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control3/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button6" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control3/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button7" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control3/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button8" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control3/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button9" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control3/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control3/MarginContainer/Control" groups=["ZoomInButtons"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control4" type="Control" parent="Game/Control2/MarginContainer/GridContainer"]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="Game/Control2/MarginContainer/GridContainer/Control4"]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Game/Control2/MarginContainer/GridContainer/Control4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Control" type="Control" parent="Game/Control2/MarginContainer/GridContainer/Control4/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="Game/Control2/MarginContainer/GridContainer/Control4/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 7
+theme_override_constants/v_separation = 7
+columns = 3
+
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control4/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button2" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control4/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button3" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control4/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button4" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control4/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button5" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control4/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button6" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control4/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button7" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control4/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button8" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control4/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button9" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control4/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control4/MarginContainer/Control" groups=["ZoomInButtons"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control5" type="Control" parent="Game/Control2/MarginContainer/GridContainer"]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="Game/Control2/MarginContainer/GridContainer/Control5"]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Game/Control2/MarginContainer/GridContainer/Control5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Control" type="Control" parent="Game/Control2/MarginContainer/GridContainer/Control5/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="Game/Control2/MarginContainer/GridContainer/Control5/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 7
+theme_override_constants/v_separation = 7
+columns = 3
+
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control5/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button2" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control5/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button3" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control5/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button4" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control5/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button5" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control5/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button6" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control5/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button7" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control5/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button8" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control5/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button9" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control5/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control5/MarginContainer/Control" groups=["ZoomInButtons"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control6" type="Control" parent="Game/Control2/MarginContainer/GridContainer"]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="Game/Control2/MarginContainer/GridContainer/Control6"]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Game/Control2/MarginContainer/GridContainer/Control6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Control" type="Control" parent="Game/Control2/MarginContainer/GridContainer/Control6/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="Game/Control2/MarginContainer/GridContainer/Control6/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 7
+theme_override_constants/v_separation = 7
+columns = 3
+
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control6/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button2" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control6/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button3" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control6/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button4" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control6/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button5" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control6/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button6" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control6/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button7" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control6/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button8" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control6/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button9" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control6/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control6/MarginContainer/Control" groups=["ZoomInButtons"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control7" type="Control" parent="Game/Control2/MarginContainer/GridContainer"]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="Game/Control2/MarginContainer/GridContainer/Control7"]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Game/Control2/MarginContainer/GridContainer/Control7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Control" type="Control" parent="Game/Control2/MarginContainer/GridContainer/Control7/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="Game/Control2/MarginContainer/GridContainer/Control7/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 7
+theme_override_constants/v_separation = 7
+columns = 3
+
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control7/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button2" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control7/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button3" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control7/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button4" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control7/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button5" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control7/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button6" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control7/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button7" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control7/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button8" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control7/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button9" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control7/MarginContainer/Control/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control7/MarginContainer/Control" groups=["ZoomInButtons"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control8" type="Control" parent="Game/Control2/MarginContainer/GridContainer"]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="Game/Control2/MarginContainer/GridContainer/Control8"]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Game/Control2/MarginContainer/GridContainer/Control8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Control8In" type="Control" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 7
+theme_override_constants/v_separation = 7
+columns = 3
+
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button2" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button3" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button4" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button5" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button6" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button7" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button8" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button9" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In" groups=["ZoomInButtons"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control9" type="Control" parent="Game/Control2/MarginContainer/GridContainer"]
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="Game/Control2/MarginContainer/GridContainer/Control9"]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Game/Control2/MarginContainer/GridContainer/Control9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Control9In" type="Control" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_kua3q")
+
+[node name="GridContainer" type="GridContainer" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 7
+theme_override_constants/v_separation = 7
+columns = 3
+
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button2" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button3" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button4" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button5" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button6" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button7" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button8" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button9" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In" groups=["ZoomInButtons"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CameraController" type="Node2D" parent="."]
+script = ExtResource("3_aiqyb")
+
+[node name="Camera2D" type="Camera2D" parent="CameraController"]
+position = Vector2(573, 320)
+script = ExtResource("2_h8848")
+
+[node name="BackControl" type="Control" parent="CameraController"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -554.0
+offset_top = 90.0
+offset_right = -455.0
+offset_bottom = 146.0
+
+[node name="ColorRect" type="ColorRect" parent="CameraController/BackControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.79888, 0, 0.221495, 1)
+
+[node name="Sliding back button" type="Button" parent="CameraController/BackControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "BACK"
+flat = true
+script = ExtResource("6_k5vro")
+
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_1_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control2/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_2_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control3/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_3_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control4/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_4_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control5/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_5_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control6/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_6_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control7/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_7_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/Button" to="CameraController" method="_on_zoom_in_button_8_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/Button" to="CameraController" method="_on_zoom_in_button_9_pressed"]
+[connection signal="pressed" from="CameraController/BackControl/Sliding back button" to="CameraController" method="_on_sliding_back_button_pressed"]
