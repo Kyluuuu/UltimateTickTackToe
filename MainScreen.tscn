@@ -1,11 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://ddneksnqngx5g"]
+[gd_scene load_steps=17 format=3 uid="uid://trd5b11tyn6e"]
 
 [ext_resource type="Script" path="res://control.gd" id="1_kua3q"]
 [ext_resource type="Script" path="res://main_screen.gd" id="1_n0k8k"]
 [ext_resource type="Shader" path="res://testShader.gdshader" id="1_t5wjj"]
 [ext_resource type="Script" path="res://camera_2d.gd" id="2_h8848"]
 [ext_resource type="Script" path="res://camera_controller.gd" id="3_aiqyb"]
+[ext_resource type="Script" path="res://zoom_in_button_1.gd" id="4_af66v"]
+[ext_resource type="Script" path="res://zoom_in_button_2.gd" id="5_vidxu"]
 [ext_resource type="Script" path="res://sliding_back_button.gd" id="6_k5vro"]
+[ext_resource type="Script" path="res://zoom_in_button_3.gd" id="6_lk6m5"]
+[ext_resource type="Script" path="res://zoom_in_button_4.gd" id="7_top3p"]
+[ext_resource type="Script" path="res://zoom_in_button_5.gd" id="8_8wep4"]
+[ext_resource type="Script" path="res://zoom_in_button_6.gd" id="9_6xnen"]
+[ext_resource type="Script" path="res://zoom_in_button_7.gd" id="10_nlouj"]
+[ext_resource type="Script" path="res://zoom_in_button_8.gd" id="11_lp5ej"]
+[ext_resource type="Script" path="res://zoom_in_button_9.gd" id="12_85e0f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lfgdx"]
 shader = ExtResource("1_t5wjj")
@@ -13,6 +22,13 @@ shader = ExtResource("1_t5wjj")
 [node name="Node2D" type="Node2D"]
 material = SubResource("ShaderMaterial_lfgdx")
 script = ExtResource("1_n0k8k")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -129.0
+offset_top = -35.0
+offset_right = 1248.0
+offset_bottom = 766.0
+color = Color(0.185248, 0.298894, 0.410117, 1)
 
 [node name="Game" type="Control" parent="."]
 layout_mode = 3
@@ -162,13 +178,14 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control/MarginContainer/Control" groups=["ZoomInButtons"]]
+[node name="ZoomInButton1" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control/MarginContainer/Control" groups=["ZoomInButtons"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("4_af66v")
 
 [node name="Control2" type="Control" parent="Game/Control2/MarginContainer/GridContainer"]
 use_parent_material = true
@@ -262,13 +279,14 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control2/MarginContainer/Control" groups=["ZoomInButtons"]]
+[node name="ZoomInButton2" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control2/MarginContainer/Control" groups=["ZoomInButtons"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("5_vidxu")
 
 [node name="Control3" type="Control" parent="Game/Control2/MarginContainer/GridContainer"]
 use_parent_material = true
@@ -362,13 +380,14 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control3/MarginContainer/Control" groups=["ZoomInButtons"]]
+[node name="ZoomInButton3" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control3/MarginContainer/Control" groups=["ZoomInButtons"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("6_lk6m5")
 
 [node name="Control4" type="Control" parent="Game/Control2/MarginContainer/GridContainer"]
 use_parent_material = true
@@ -462,13 +481,14 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control4/MarginContainer/Control" groups=["ZoomInButtons"]]
+[node name="ZoomInButton4" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control4/MarginContainer/Control" groups=["ZoomInButtons"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("7_top3p")
 
 [node name="Control5" type="Control" parent="Game/Control2/MarginContainer/GridContainer"]
 use_parent_material = true
@@ -562,13 +582,14 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control5/MarginContainer/Control" groups=["ZoomInButtons"]]
+[node name="ZoomInButton5" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control5/MarginContainer/Control" groups=["ZoomInButtons"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("8_8wep4")
 
 [node name="Control6" type="Control" parent="Game/Control2/MarginContainer/GridContainer"]
 use_parent_material = true
@@ -662,13 +683,14 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control6/MarginContainer/Control" groups=["ZoomInButtons"]]
+[node name="ZoomInButton6" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control6/MarginContainer/Control" groups=["ZoomInButtons"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("9_6xnen")
 
 [node name="Control7" type="Control" parent="Game/Control2/MarginContainer/GridContainer"]
 use_parent_material = true
@@ -762,13 +784,14 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control7/MarginContainer/Control" groups=["ZoomInButtons"]]
+[node name="ZoomInButton7" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control7/MarginContainer/Control" groups=["ZoomInButtons"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("10_nlouj")
 
 [node name="Control8" type="Control" parent="Game/Control2/MarginContainer/GridContainer"]
 use_parent_material = true
@@ -862,13 +885,14 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In" groups=["ZoomInButtons"]]
+[node name="ZoomInButton8" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In" groups=["ZoomInButtons"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("11_lp5ej")
 
 [node name="Control9" type="Control" parent="Game/Control2/MarginContainer/GridContainer"]
 use_parent_material = true
@@ -918,58 +942,59 @@ theme_override_constants/h_separation = 7
 theme_override_constants/v_separation = 7
 columns = 3
 
-[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer" groups=["Game9Buttons"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button2" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
+[node name="Button2" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer" groups=["Game9Buttons"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button3" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
+[node name="Button3" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer" groups=["Game9Buttons"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button4" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
+[node name="Button4" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer" groups=["Game9Buttons"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button5" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
+[node name="Button5" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer" groups=["Game9Buttons"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button6" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
+[node name="Button6" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer" groups=["Game9Buttons"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button7" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
+[node name="Button7" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer" groups=["Game9Buttons"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button8" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
+[node name="Button8" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer" groups=["Game9Buttons"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button9" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
+[node name="Button9" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer" groups=["Game9Buttons"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In" groups=["ZoomInButtons"]]
+[node name="ZoomInButton9" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In" groups=["ZoomInButtons"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("12_85e0f")
 
 [node name="CameraController" type="Node2D" parent="."]
 script = ExtResource("3_aiqyb")
@@ -1006,13 +1031,21 @@ text = "BACK"
 flat = true
 script = ExtResource("6_k5vro")
 
-[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_1_pressed"]
-[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control2/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_2_pressed"]
-[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control3/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_3_pressed"]
-[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control4/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_4_pressed"]
-[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control5/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_5_pressed"]
-[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control6/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_6_pressed"]
-[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control7/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_7_pressed"]
-[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/Button" to="CameraController" method="_on_zoom_in_button_8_pressed"]
-[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/Button" to="CameraController" method="_on_zoom_in_button_9_pressed"]
+[node name="Label" type="Label" parent="CameraController"]
+offset_left = -125.0
+offset_top = 71.0
+offset_right = 223.0
+offset_bottom = 345.0
+theme_override_font_sizes/font_size = 35
+text = "Current Turn is : X"
+
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control/MarginContainer/Control/ZoomInButton1" to="CameraController" method="_on_zoom_in_button_1_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control2/MarginContainer/Control/ZoomInButton2" to="CameraController" method="_on_zoom_in_button_2_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control3/MarginContainer/Control/ZoomInButton3" to="CameraController" method="_on_zoom_in_button_3_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control4/MarginContainer/Control/ZoomInButton4" to="CameraController" method="_on_zoom_in_button_4_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control5/MarginContainer/Control/ZoomInButton5" to="CameraController" method="_on_zoom_in_button_5_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control6/MarginContainer/Control/ZoomInButton6" to="CameraController" method="_on_zoom_in_button_6_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control7/MarginContainer/Control/ZoomInButton7" to="CameraController" method="_on_zoom_in_button_7_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/ZoomInButton8" to="CameraController" method="_on_zoom_in_button_8_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/ZoomInButton9" to="CameraController" method="_on_zoom_in_button_9_pressed"]
 [connection signal="pressed" from="CameraController/BackControl/Sliding back button" to="CameraController" method="_on_sliding_back_button_pressed"]
