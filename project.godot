@@ -10,22 +10,13 @@ config_version=5
 
 [application]
 
-<<<<<<< HEAD
 config/name="TTT_07"
 config/features=PackedStringArray("4.3", "Mobile")
-=======
-config/name="TickTackToe"
-config/features=PackedStringArray("4.3", "GL Compatibility")
->>>>>>> 0d197d4d2253e3dde83279b97020cc4cecac98f9
 config/icon="res://icon.svg"
 
 [dotnet]
 
-<<<<<<< HEAD
 project/assembly_name="TTT_07"
-=======
-project/assembly_name="TickTackToe"
->>>>>>> 0d197d4d2253e3dde83279b97020cc4cecac98f9
 
 [editor]
 
@@ -34,9 +25,4 @@ version_control/autoload_on_startup=true
 
 [rendering]
 
-<<<<<<< HEAD
 renderer/rendering_method="mobile"
-=======
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
->>>>>>> 0d197d4d2253e3dde83279b97020cc4cecac98f9
