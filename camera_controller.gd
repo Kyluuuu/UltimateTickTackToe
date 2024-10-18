@@ -45,8 +45,12 @@ func _on_sliding_back_button_pressed():
 	zoomingIn = false;
 	
 func processButton(button):
+	if currentButton != null:
+		currentButton.visible = true
 	currentButton = button
 	zoomingIn = true;
+	button.visible = false
+	
 
 
 func _on_zoom_in_button_1_pressed() -> void:
