@@ -799,12 +799,12 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Control" type="Control" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer"]
+[node name="Control8In" type="Control" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="GridContainer" type="GridContainer" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control"]
+[node name="GridContainer" type="GridContainer" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -817,52 +817,52 @@ theme_override_constants/h_separation = 7
 theme_override_constants/v_separation = 7
 columns = 3
 
-[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control/GridContainer"]
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button2" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control/GridContainer"]
+[node name="Button2" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button3" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control/GridContainer"]
+[node name="Button3" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button4" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control/GridContainer"]
+[node name="Button4" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button5" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control/GridContainer"]
+[node name="Button5" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button6" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control/GridContainer"]
+[node name="Button6" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button7" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control/GridContainer"]
+[node name="Button7" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button8" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control/GridContainer"]
+[node name="Button8" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button9" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control/GridContainer"]
+[node name="Button9" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control" groups=["ZoomInButtons"]]
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In" groups=["ZoomInButtons"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -899,13 +899,13 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Control" type="Control" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer"]
+[node name="Control9In" type="Control" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_kua3q")
 
-[node name="GridContainer" type="GridContainer" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control"]
+[node name="GridContainer" type="GridContainer" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -918,52 +918,52 @@ theme_override_constants/h_separation = 7
 theme_override_constants/v_separation = 7
 columns = 3
 
-[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control/GridContainer"]
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button2" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control/GridContainer"]
+[node name="Button2" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button3" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control/GridContainer"]
+[node name="Button3" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button4" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control/GridContainer"]
+[node name="Button4" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button5" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control/GridContainer"]
+[node name="Button5" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button6" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control/GridContainer"]
+[node name="Button6" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button7" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control/GridContainer"]
+[node name="Button7" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button8" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control/GridContainer"]
+[node name="Button8" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button9" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control/GridContainer"]
+[node name="Button9" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control" groups=["ZoomInButtons"]]
+[node name="Button" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In" groups=["ZoomInButtons"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1013,6 +1013,6 @@ script = ExtResource("6_k5vro")
 [connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control5/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_5_pressed"]
 [connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control6/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_6_pressed"]
 [connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control7/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_7_pressed"]
-[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_8_pressed"]
-[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control/Button" to="CameraController" method="_on_zoom_in_button_9_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/Button" to="CameraController" method="_on_zoom_in_button_8_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/Button" to="CameraController" method="_on_zoom_in_button_9_pressed"]
 [connection signal="pressed" from="CameraController/BackControl/Sliding back button" to="CameraController" method="_on_sliding_back_button_pressed"]
