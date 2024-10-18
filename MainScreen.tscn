@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://0tcaa3nl05uu"]
+[gd_scene load_steps=17 format=3 uid="uid://ca3xgamkpeovt"]
 
 [ext_resource type="Script" path="res://control.gd" id="1_kua3q"]
 [ext_resource type="Script" path="res://main_screen.gd" id="1_n0k8k"]
@@ -1047,5 +1047,11 @@ text = "Current Turn is : X"
 [connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control6/MarginContainer/Control/ZoomInButton6" to="CameraController" method="_on_zoom_in_button_6_pressed"]
 [connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control7/MarginContainer/Control/ZoomInButton7" to="CameraController" method="_on_zoom_in_button_7_pressed"]
 [connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control8/MarginContainer/Control8In/ZoomInButton8" to="CameraController" method="_on_zoom_in_button_8_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer/Button" to="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In" method="_on_button_0_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer/Button2" to="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In" method="_on_button_1_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer/Button3" to="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In" method="_on_button_2_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer/Button4" to="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In" method="_on_button_3_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer/Button5" to="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In" method="_on_button_4_pressed"]
+[connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/GridContainer/Button6" to="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In" method="_on_button_5_pressed"]
 [connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/ZoomInButton9" to="CameraController" method="_on_zoom_in_button_9_pressed"]
 [connection signal="pressed" from="CameraController/BackControl/Sliding back button" to="CameraController" method="_on_sliding_back_button_pressed"]
