@@ -43,6 +43,7 @@ func zoomOut() -> void:
 
 func _on_sliding_back_button_pressed():
 	zoomingIn = false;
+	currentButton.visible = true
 	
 func processButton(button):
 	if currentButton != null:

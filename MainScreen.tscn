@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ca3xgamkpeovt"]
+[gd_scene load_steps=19 format=3 uid="uid://ca3xgamkpeovt"]
 
 [ext_resource type="Script" path="res://control.gd" id="1_kua3q"]
 [ext_resource type="Script" path="res://main_screen.gd" id="1_n0k8k"]
@@ -15,6 +15,8 @@
 [ext_resource type="Script" path="res://zoom_in_button_7.gd" id="10_nlouj"]
 [ext_resource type="Script" path="res://zoom_in_button_8.gd" id="11_lp5ej"]
 [ext_resource type="Script" path="res://zoom_in_button_9.gd" id="12_85e0f"]
+[ext_resource type="FontFile" uid="uid://cchkw88iy38r8" path="res://static/Exo2-Regular.ttf" id="12_ik7h3"]
+[ext_resource type="FontFile" uid="uid://d24x78j63thd7" path="res://Exo2-Italic-VariableFont_wght.ttf" id="17_ral7h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lfgdx"]
 shader = ExtResource("1_t5wjj")
@@ -986,6 +988,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("12_ik7h3")
 
 [node name="ZoomInButton9" type="Button" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In" groups=["ZoomInButtons"]]
 layout_mode = 1
@@ -1032,11 +1035,12 @@ flat = true
 script = ExtResource("6_k5vro")
 
 [node name="Label" type="Label" parent="CameraController"]
-offset_left = -125.0
-offset_top = 71.0
-offset_right = 223.0
-offset_bottom = 345.0
-theme_override_font_sizes/font_size = 35
+offset_left = 9.0
+offset_top = 44.0
+offset_right = 327.0
+offset_bottom = 149.0
+theme_override_fonts/font = ExtResource("17_ral7h")
+theme_override_font_sizes/font_size = 25
 text = "Current Turn is : X"
 
 [connection signal="pressed" from="Game/Control2/MarginContainer/GridContainer/Control/MarginContainer/Control/ZoomInButton1" to="CameraController" method="_on_zoom_in_button_1_pressed"]
