@@ -1,6 +1,6 @@
 extends Node2D
 
-# 0 : X, 1 : O
+# 0 : O, 1 : X
 var playerTurn
 
 func _ready() -> void:
@@ -14,3 +14,6 @@ func _updatePlayerTurn() -> void:
 		playerTurn = 1
 	else:
 		playerTurn = 0
+
+func _get_player_turn() -> int:
+	return playerTurn
