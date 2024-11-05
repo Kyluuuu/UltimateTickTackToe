@@ -100,7 +100,3 @@ func checkForWin(turn : int) -> bool:
 		if isWin:
 			return isWin
 	return false
-	
-	
-	
-	
