@@ -70,9 +70,10 @@ func _on_button_8_pressed() -> void:
 	var index = 8
 	processButton(index)
 	
-	
-func _game_result(winner : int) -> void:
-	pass
+func gameFinished() -> void:
+	var root = get_node("/root/Node2D/Game")
+	if root.has_method("_game_result") :
+		root._game_result(8)
 	
 func processButton(index : int) -> void:
 	if tileState[index] == 2:
@@ -80,12 +81,15 @@ func processButton(index : int) -> void:
 		tileState[index] = playerTurn
 		if checkForWin(playerTurn):
 			var button : Button = get_tree().get_nodes_in_group("ZoomInButtons")[8]
+			var label : Label = button.get_child(0)
 			button.visible = true
-			button.modulate.a = 0
+			button.modulate.a = 1
+			button.disabled = true
 			if playerTurn == 0:
-				button.text = "O"
+				label.text = "0"
 			else:
-				button.text = "X"
+				label.text = "X"
+			gameFinished()
 		else:
 			print("Already pressed!")
 	

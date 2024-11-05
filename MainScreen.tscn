@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ca3xgamkpeovt"]
+[gd_scene load_steps=20 format=3 uid="uid://ca3xgamkpeovt"]
 
 [ext_resource type="Script" path="res://control.gd" id="1_kua3q"]
 [ext_resource type="Script" path="res://main_screen.gd" id="1_n0k8k"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://zoom_in_button_8.gd" id="11_lp5ej"]
 [ext_resource type="Script" path="res://zoom_in_button_9.gd" id="12_85e0f"]
 [ext_resource type="FontFile" uid="uid://cchkw88iy38r8" path="res://static/Exo2-Regular.ttf" id="12_ik7h3"]
+[ext_resource type="Script" path="res://control_9_in.gd" id="12_qfgc0"]
 [ext_resource type="FontFile" uid="uid://d24x78j63thd7" path="res://Exo2-Italic-VariableFont_wght.ttf" id="17_ral7h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lfgdx"]
@@ -929,7 +930,7 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_kua3q")
+script = ExtResource("12_qfgc0")
 
 [node name="GridContainer" type="GridContainer" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In"]
 layout_mode = 1
@@ -997,7 +998,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 100
 script = ExtResource("12_85e0f")
+
+[node name="Label9" type="Label" parent="Game/Control2/MarginContainer/GridContainer/Control9/MarginContainer/Control9In/ZoomInButton9"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 150
 
 [node name="CameraController" type="Node2D" parent="."]
 script = ExtResource("3_aiqyb")
