@@ -1,0 +1,142 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1i2ytl536hsk"]
+
+[ext_resource type="Script" path="res://Scripts/MinigameButtonControl.gd" id="1_ssfxq"]
+[ext_resource type="FontFile" uid="uid://cchkw88iy38r8" path="res://static/Exo2-Regular.ttf" id="2_skevd"]
+[ext_resource type="Script" path="res://Scripts/zoom_in_button.gd" id="3_344pu"]
+
+[node name="MinigameControl" type="Control"]
+use_parent_material = true
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="MinigameButtonControl" type="Control" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ssfxq")
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/MinigameButtonControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 7
+theme_override_constants/v_separation = 7
+columns = 3
+
+[node name="Button" type="Button" parent="MarginContainer/MinigameButtonControl/GridContainer" groups=["Game9Buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button2" type="Button" parent="MarginContainer/MinigameButtonControl/GridContainer" groups=["Game9Buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button3" type="Button" parent="MarginContainer/MinigameButtonControl/GridContainer" groups=["Game9Buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button4" type="Button" parent="MarginContainer/MinigameButtonControl/GridContainer" groups=["Game9Buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button5" type="Button" parent="MarginContainer/MinigameButtonControl/GridContainer" groups=["Game9Buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button6" type="Button" parent="MarginContainer/MinigameButtonControl/GridContainer" groups=["Game9Buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button7" type="Button" parent="MarginContainer/MinigameButtonControl/GridContainer" groups=["Game9Buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button8" type="Button" parent="MarginContainer/MinigameButtonControl/GridContainer" groups=["Game9Buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button9" type="Button" parent="MarginContainer/MinigameButtonControl/GridContainer" groups=["Game9Buttons"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_skevd")
+
+[node name="ZoomInButton9" type="Button" parent="MarginContainer/MinigameButtonControl" groups=["ZoomInButtons"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+script = ExtResource("3_344pu")
+
+[node name="Grey" type="ColorRect" parent="MarginContainer/MinigameButtonControl"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Beeglabel" type="Label" parent="MarginContainer/MinigameButtonControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 150
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/MinigameButtonControl/GridContainer/Button" to="MarginContainer/MinigameButtonControl" method="_on_button_0_pressed"]
+[connection signal="pressed" from="MarginContainer/MinigameButtonControl/GridContainer/Button2" to="MarginContainer/MinigameButtonControl" method="_on_button_1_pressed"]
+[connection signal="pressed" from="MarginContainer/MinigameButtonControl/GridContainer/Button3" to="MarginContainer/MinigameButtonControl" method="_on_button_2_pressed"]
+[connection signal="pressed" from="MarginContainer/MinigameButtonControl/GridContainer/Button4" to="MarginContainer/MinigameButtonControl" method="_on_button_3_pressed"]
+[connection signal="pressed" from="MarginContainer/MinigameButtonControl/GridContainer/Button5" to="MarginContainer/MinigameButtonControl" method="_on_button_4_pressed"]
+[connection signal="pressed" from="MarginContainer/MinigameButtonControl/GridContainer/Button6" to="MarginContainer/MinigameButtonControl" method="_on_button_5_pressed"]
+[connection signal="pressed" from="MarginContainer/MinigameButtonControl/GridContainer/Button7" to="MarginContainer/MinigameButtonControl" method="_on_button_6_pressed"]
+[connection signal="pressed" from="MarginContainer/MinigameButtonControl/GridContainer/Button8" to="MarginContainer/MinigameButtonControl" method="_on_button_7_pressed"]
+[connection signal="pressed" from="MarginContainer/MinigameButtonControl/GridContainer/Button9" to="MarginContainer/MinigameButtonControl" method="_on_button_8_pressed"]
+[connection signal="pressed" from="MarginContainer/MinigameButtonControl/ZoomInButton9" to="MarginContainer/MinigameButtonControl" method="_on_zoom_in_button_9_pressed"]
