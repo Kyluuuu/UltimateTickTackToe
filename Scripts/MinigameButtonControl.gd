@@ -1,18 +1,19 @@
 extends Control
 
 #0 for O, 1 for X, 2 for nothing
-var tileState
+var tileState = []
 var currentTurn = 0
-var xAmount = 0
-var oAmount = 0
+
+var gameID : int
 
 var buttons = []
 var winningCombinations = []
-var gameStates = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	tileState = [2, 2, 2, 2, 2, 2, 2, 2, 2]
+	
+	gameID = get_node(".").get_parent().get_parent().get_meta("Mini")
 	
 	winningCombinations.append([0, 1, 2])
 	winningCombinations.append([3, 4, 5])
@@ -26,8 +27,6 @@ func _ready() -> void:
 	for button in get_node("GridContainer").get_children():
 		buttons.append(button)
 		
-	for i in range(9) :
-		gameStates.append(i)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -72,29 +71,46 @@ func _on_button_8_pressed() -> void:
 	
 func gameFinished(playerTurn : int) -> void:
 	var node = get_tree().current_scene.get_node("Game")
-	node._game_result(playerTurn, get_node(".").get_parent().get_parent().get_meta("Mini"))
+	node._game_result(playerTurn, gameID)
+	
+func nextMiniGame(index : int) -> void:
+	var node = get_tree().current_scene.get_node("Game")
+	node._miniGameHighlight(index + 1, gameID)
+
+func highlight() -> void:
+	var colorNode : ColorRect = get_parent().get_parent().get_node("ColorRect")
+	colorNode.color = Color.PURPLE
+	
+func unhighlight() -> void:
+	var colorNode : ColorRect = get_parent().get_parent().get_node("ColorRect")
+	colorNode.color = Color.WHITE
 	
 	
 func processButton(index : int) -> void:
-	if tileState[index] == 2:
-		var playerTurn = changeButtonText(buttons[index])
-		tileState[index] = playerTurn
-		if checkForWin(playerTurn):
-			var button : Button = get_child(1)
-			var label : Label = get_child(3)
-			var grey : ColorRect = get_child(2)
-			button.visible = true
-			grey.visible = true
-			grey.modulate.a = 0.5;
-			button.disabled = true
-			if playerTurn == 0:
-				label.text = "0"
-			else:
-				label.text = "X"
-			gameFinished(playerTurn)
+	var chosenGame = get_tree().current_scene.get_node("Game").getCurrentChosenGame()
+	if chosenGame == -1 or chosenGame == gameID:
+		if tileState[index] == 2:
+			nextMiniGame(index)
+			var playerTurn = changeButtonText(buttons[index])
+			tileState[index] = playerTurn
+			if checkForWin(playerTurn):
+				var button : Button = get_child(1)
+				var label : Label = get_child(3)
+				var grey : ColorRect = get_child(2)
+				button.visible = true
+				grey.visible = true
+				grey.modulate.a = 0.5;
+				button.disabled = true
+				if playerTurn == 0:
+					label.text = "0"
+				else:
+					label.text = "X"
+				gameFinished(playerTurn)
+	else :
+		return
 	
 func changeButtonText(button : Button) -> int:
-	var gameNode = get_node("/root/Node2D")
+	var gameNode = get_node("/root/RootNode")
 	var playerTurn = gameNode. _get_player_turn()
 	gameNode._updatePlayerTurn()
 	if playerTurn == 0:

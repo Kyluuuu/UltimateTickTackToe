@@ -2,6 +2,9 @@ extends Node2D
 
 var zoomingIn = false
 
+var RestartColorRect : ColorRect
+var RestartButton : Button 
+
 var camera
 
 var currentButton
@@ -12,6 +15,10 @@ const zoomed_out = Vector2(1, 1)  # Zoom level for zooming out
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	camera = $Camera2D
+	RestartColorRect = get_node("RestartControl/ColorRect")
+	RestartButton = get_node("RestartControl/RestartButton")
+	RestartColorRect.visible = false
+	RestartButton.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -42,6 +49,10 @@ func zoomOut() -> void:
 
 
 func _on_sliding_back_button_pressed():
+	if get_tree().root.get_node("RootNode").getGameOver():
+		RestartColorRect.visible = true
+		RestartButton.visible = true
+		RestartButton.disabled = false
 	zoomingIn = false;
 	currentButton.visible = true
 	

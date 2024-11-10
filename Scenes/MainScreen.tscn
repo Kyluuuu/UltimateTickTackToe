@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bw3b2b2fdyo6o"]
+[gd_scene load_steps=8 format=3 uid="uid://bw3b2b2fdyo6o"]
 
 [ext_resource type="Script" path="res://Scripts/RootNode.gd" id="1_htd2p"]
 [ext_resource type="Script" path="res://Scripts/GameControl.gd" id="2_y5xcm"]
 [ext_resource type="PackedScene" uid="uid://d1i2ytl536hsk" path="res://Scenes/MinigameScene.tscn" id="3_kikqi"]
 [ext_resource type="Script" path="res://Scripts/camera_controller.gd" id="4_gq6cn"]
+[ext_resource type="Script" path="res://Scripts/restart_button.gd" id="5_hr30w"]
 [ext_resource type="FontFile" uid="uid://d24x78j63thd7" path="res://Fonts/Exo2-Italic-VariableFont_wght.ttf" id="5_jkjoq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lfgdx"]
@@ -140,6 +141,35 @@ script = ExtResource("4_gq6cn")
 [node name="Camera2D" type="Camera2D" parent="CameraController"]
 position = Vector2(573, 320)
 
+[node name="RestartControl" type="Control" parent="CameraController"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 60.0
+offset_top = 267.0
+offset_right = 203.4
+offset_bottom = 389.2
+
+[node name="ColorRect" type="ColorRect" parent="CameraController/RestartControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.642119, 0.335087, 9.62615e-08, 1)
+
+[node name="RestartButton" type="Button" parent="CameraController/RestartControl"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "RESTART
+"
+flat = true
+script = ExtResource("5_hr30w")
+
 [node name="BackControl" type="Control" parent="CameraController"]
 layout_mode = 3
 anchors_preset = 0
@@ -174,6 +204,7 @@ offset_right = 327.0
 offset_bottom = 149.0
 theme_override_fonts/font = ExtResource("5_jkjoq")
 theme_override_font_sizes/font_size = 25
-text = "Current Turn is : X"
+text = "Current Turn is : 0"
 
+[connection signal="pressed" from="CameraController/RestartControl/RestartButton" to="CameraController/RestartControl/RestartButton" method="_on_pressed"]
 [connection signal="pressed" from="CameraController/BackControl/Sliding back button" to="CameraController" method="_on_sliding_back_button_pressed"]

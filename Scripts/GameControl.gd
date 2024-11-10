@@ -1,14 +1,11 @@
 extends Control
 
 #0 for O, 1 for X, 2 for nothing
-var tileState
-var currentTurn = 0
-var xAmount = 0
-var oAmount = 0
-
-var buttons = []
-var winningCombinations = []
 var gameStates = []
+
+var lastHighlightIndex = -1
+
+var winningCombinations = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,7 +30,6 @@ func _game_result(winner : int, miniID : int) -> void:
 	var result = checkForWin(winner)
 	if result:
 		var label : Label = get_node("BeegLabel")
-		print(winner)
 		if winner == 1:
 			label.text = "X"
 		else:
@@ -41,6 +37,14 @@ func _game_result(winner : int, miniID : int) -> void:
 		var grey : ColorRect = get_node("DaGrey")
 		grey.visible = true
 		grey.modulate.a = 0.5;
+		var root = get_node("/root/RootNode")
+		root._updatePlayerTurnToWin(label.text)
+	else:
+		for i in range(9) :
+			if gameStates[i] == 2:
+				return
+		var root = get_node("/root/RootNode")
+		root._updatePlayerTurnDraw()
 
 func checkForWin(turn : int) -> bool:
 	for combination in winningCombinations:
@@ -51,3 +55,17 @@ func checkForWin(turn : int) -> bool:
 		if isWin:
 			return isWin
 	return false
+	
+func _miniGameHighlight(index : int, miniGameIndex : int) -> void:
+	if lastHighlightIndex != -1:
+		var miniGameLast = get_node("Control2/MarginContainer/GridContainer/Minigame" + str(lastHighlightIndex))
+		miniGameLast.get_node("MarginContainer/MinigameButtonControl").unhighlight()
+	if gameStates[index - 1] == 2:
+		var miniGameNew = get_node("Control2/MarginContainer/GridContainer/Minigame" + str(index))
+		miniGameNew.get_node("MarginContainer/MinigameButtonControl").highlight()
+		lastHighlightIndex = index
+	else :
+		lastHighlightIndex = -1
+
+func getCurrentChosenGame() -> int:
+	return lastHighlightIndex
