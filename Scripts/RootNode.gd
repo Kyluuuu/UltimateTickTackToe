@@ -37,6 +37,3 @@ func _get_player_turn() -> int:
 	
 func getGameOver() -> bool:
 	return GameOver
-	
-func test() -> void:
-	GameOver = true

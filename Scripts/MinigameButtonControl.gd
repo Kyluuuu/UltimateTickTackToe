@@ -11,6 +11,7 @@ var winningCombinations = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	highlight()
 	tileState = [2, 2, 2, 2, 2, 2, 2, 2, 2]
 	
 	gameID = get_node(".").get_parent().get_parent().get_meta("Mini")
@@ -90,7 +91,6 @@ func processButton(index : int) -> void:
 	var chosenGame = get_tree().current_scene.get_node("Game").getCurrentChosenGame()
 	if chosenGame == -1 or chosenGame == gameID:
 		if tileState[index] == 2:
-			nextMiniGame(index)
 			var playerTurn = changeButtonText(buttons[index])
 			tileState[index] = playerTurn
 			if checkForWin(playerTurn):
@@ -106,6 +106,7 @@ func processButton(index : int) -> void:
 				else:
 					label.text = "X"
 				gameFinished(playerTurn)
+			nextMiniGame(index)
 	else :
 		return
 	

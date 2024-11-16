@@ -15,10 +15,10 @@ position = Vector2(-1, 0)
 script = ExtResource("1_htd2p")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -129.0
-offset_top = -35.0
-offset_right = 1248.0
-offset_bottom = 766.0
+offset_left = -676.0
+offset_top = -579.0
+offset_right = 1850.0
+offset_bottom = 1201.0
 color = Color(0.185248, 0.298894, 0.410117, 1)
 
 [node name="Game" type="Control" parent="."]
@@ -144,9 +144,9 @@ position = Vector2(573, 320)
 [node name="RestartControl" type="Control" parent="CameraController"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 60.0
+offset_left = 886.49
 offset_top = 267.0
-offset_right = 203.4
+offset_right = 1029.89
 offset_bottom = 389.2
 
 [node name="ColorRect" type="ColorRect" parent="CameraController/RestartControl"]

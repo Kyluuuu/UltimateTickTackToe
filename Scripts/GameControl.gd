@@ -57,15 +57,20 @@ func checkForWin(turn : int) -> bool:
 	return false
 	
 func _miniGameHighlight(index : int, miniGameIndex : int) -> void:
-	if lastHighlightIndex != -1:
-		var miniGameLast = get_node("Control2/MarginContainer/GridContainer/Minigame" + str(lastHighlightIndex))
-		miniGameLast.get_node("MarginContainer/MinigameButtonControl").unhighlight()
-	if gameStates[index - 1] == 2:
-		var miniGameNew = get_node("Control2/MarginContainer/GridContainer/Minigame" + str(index))
-		miniGameNew.get_node("MarginContainer/MinigameButtonControl").highlight()
-		lastHighlightIndex = index
-	else :
-		lastHighlightIndex = -1
+	for i in range(9):
+		var miniGame = get_node("Control2/MarginContainer/GridContainer/Minigame" + str(i + 1))
+		miniGame.get_node("MarginContainer/MinigameButtonControl").unhighlight()
+	if !get_parent().getGameOver():
+		if gameStates[index - 1] == 2:
+			var miniGameNew = get_node("Control2/MarginContainer/GridContainer/Minigame" + str(index))
+			miniGameNew.get_node("MarginContainer/MinigameButtonControl").highlight()
+			lastHighlightIndex = index
+		else :
+			lastHighlightIndex = -1
+			for i in range(9):
+				if gameStates[i] == 2:
+					var miniGame = get_node("Control2/MarginContainer/GridContainer/Minigame" + str(i + 1))
+					miniGame.get_node("MarginContainer/MinigameButtonControl").highlight()
 
 func getCurrentChosenGame() -> int:
 	return lastHighlightIndex
