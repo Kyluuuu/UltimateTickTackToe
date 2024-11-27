@@ -37,13 +37,13 @@ func _game_result(winner : int, miniID : int) -> void:
 		var grey : ColorRect = get_node("DaGrey")
 		grey.visible = true
 		grey.modulate.a = 0.5;
-		var root = get_node("/root/RootNode")
+		var root = get_parent()
 		root._updatePlayerTurnToWin(label.text)
 	else:
 		for i in range(9) :
 			if gameStates[i] == 2:
 				return
-		var root = get_node("/root/RootNode")
+		var root = get_parent()
 		root._updatePlayerTurnDraw()
 
 func checkForWin(turn : int) -> bool:
