@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bw3b2b2fdyo6o"]
+[gd_scene load_steps=9 format=3 uid="uid://bw3b2b2fdyo6o"]
 
 [ext_resource type="Script" path="res://Scripts/RootNode.gd" id="1_htd2p"]
 [ext_resource type="Script" path="res://Scripts/GameControl.gd" id="2_y5xcm"]
@@ -8,6 +8,11 @@
 [ext_resource type="FontFile" uid="uid://d24x78j63thd7" path="res://Fonts/Exo2-Italic-VariableFont_wght.ttf" id="5_jkjoq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lfgdx"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_vg3kh"]
+properties/0/path = NodePath("Game/BeegLabel:text")
+properties/0/spawn = true
+properties/0/replication_mode = 1
 
 [node name="RootNode" type="Node2D"]
 material = SubResource("ShaderMaterial_lfgdx")
@@ -205,6 +210,9 @@ offset_bottom = 149.0
 theme_override_fonts/font = ExtResource("5_jkjoq")
 theme_override_font_sizes/font_size = 25
 text = "Current Turn is : 0"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_vg3kh")
 
 [connection signal="pressed" from="CameraController/RestartControl/RestartButton" to="CameraController/RestartControl/RestartButton" method="_on_pressed"]
 [connection signal="pressed" from="CameraController/BackControl/Sliding back button" to="CameraController" method="_on_sliding_back_button_pressed"]

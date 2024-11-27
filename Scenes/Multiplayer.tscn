@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2dhp4rj3nxb0"]
+
+[ext_resource type="Script" path="res://Scripts/multiplayer.gd" id="1_1t4n3"]
+[ext_resource type="PackedScene" uid="uid://bw3b2b2fdyo6o" path="res://Scenes/MainScreen.tscn" id="2_0uw7j"]
+
+[node name="Multiplayer" type="Node2D"]
+script = ExtResource("1_1t4n3")
+
+[node name="MainScreenNode" parent="." instance=ExtResource("2_0uw7j")]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="hostButton" type="Button" parent="Node2D"]
+offset_left = 213.0
+offset_top = 51.0
+offset_right = 449.0
+offset_bottom = 210.0
+theme_override_font_sizes/font_size = 50
+text = "Host"
+
+[node name="joinButton" type="Button" parent="Node2D"]
+offset_left = 667.0
+offset_top = 52.0
+offset_right = 903.0
+offset_bottom = 211.0
+theme_override_font_sizes/font_size = 50
+text = "Join"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="Node2D"]
+_spawnable_scenes = PackedStringArray("res://Scenes/MinigameScene.tscn")
+spawn_path = NodePath("../..")
+
+[node name="LineEditJoinIP" type="LineEdit" parent="Node2D"]
+offset_left = 626.0
+offset_top = 289.0
+offset_right = 967.0
+offset_bottom = 329.0
+placeholder_text = "Joining IP address"
+
+[node name="LineEditJoinPort" type="LineEdit" parent="Node2D"]
+offset_left = 626.0
+offset_top = 370.0
+offset_right = 967.0
+offset_bottom = 410.0
+placeholder_text = "Joining Port"
+
+[node name="lineEditHost" type="LineEdit" parent="Node2D"]
+offset_left = 162.0
+offset_top = 291.0
+offset_right = 503.0
+offset_bottom = 331.0
+placeholder_text = "Hosting Port"
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = 351.0
+offset_top = 488.0
+offset_right = 842.0
+offset_bottom = 580.0
+
+[connection signal="pressed" from="Node2D/hostButton" to="." method="_on_host_button_pressed"]
+[connection signal="pressed" from="Node2D/joinButton" to="." method="_on_join_button_pressed"]

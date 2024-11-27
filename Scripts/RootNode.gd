@@ -34,6 +34,7 @@ func _updatePlayerTurnDraw() -> void:
 
 func _get_player_turn() -> int:
 	return playerTurn
-	
+
 func getGameOver() -> bool:
 	return GameOver
+	

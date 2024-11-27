@@ -71,11 +71,11 @@ func _on_button_8_pressed() -> void:
 	processButton(index)
 	
 func gameFinished(playerTurn : int) -> void:
-	var node = get_tree().current_scene.get_node("Game")
+	var node = get_node("/root/Multiplayer/MainScreenNode/Game")
 	node._game_result(playerTurn, gameID)
 	
 func nextMiniGame(index : int) -> void:
-	var node = get_tree().current_scene.get_node("Game")
+	var node = get_node("/root/Multiplayer/MainScreenNode/Game")
 	node._miniGameHighlight(index + 1, gameID)
 
 func highlight() -> void:
@@ -85,51 +85,64 @@ func highlight() -> void:
 func unhighlight() -> void:
 	var colorNode : ColorRect = get_parent().get_parent().get_node("ColorRect")
 	colorNode.color = Color.WHITE
-	
-	
+
 func processButton(index : int) -> void:
-	var chosenGame = get_tree().current_scene.get_node("Game").getCurrentChosenGame()
-	if chosenGame == -1 or chosenGame == gameID:
-		if tileState[index] == 2:
-			var playerTurn = changeButtonText(buttons[index])
-			tileState[index] = playerTurn
-			if checkForWin(playerTurn):
-				var button : Button = get_child(1)
-				var label : Label = get_child(3)
-				var grey : ColorRect = get_child(2)
-				button.visible = true
-				grey.visible = true
-				grey.modulate.a = 0.5;
-				button.disabled = true
-				if playerTurn == 0:
-					label.text = "0"
-				else:
-					label.text = "X"
-				gameFinished(playerTurn)
-			nextMiniGame(index)
-	else :
+	var chosenGame = get_node("/root/Multiplayer/MainScreenNode/Game").getCurrentChosenGame()
+	
+	var gameNode = get_node("/root/Multiplayer/MainScreenNode/")
+	var playerTurn = gameNode._get_player_turn()
+	
+	if chosenGame != -1 and chosenGame != gameID:
+		return
+		
+	if multiplayer.is_server() and playerTurn == 1:
+		return 
+	
+	if not multiplayer.is_server() and playerTurn == 0:
+		return 
+	
+	if tileState[index] != 2:
 		return
 	
-func changeButtonText(button : Button) -> int:
-	var gameNode = get_node("/root/RootNode")
-	var playerTurn = gameNode. _get_player_turn()
+	rpcProcessButton.rpc(index, playerTurn, gameNode.get_path())
+	
+@rpc("any_peer", "call_local", "reliable")
+func rpcProcessButton(index : int, playerTurn: int, gameNodePath) -> void:
+	var gameNode = get_node(gameNodePath)
+	changeButtonText(buttons[index], playerTurn, gameNode)
+	tileState[index] = playerTurn
+	checkForWin(playerTurn)
+	nextMiniGame(index)
+	
+	
+func changeButtonText(button : Button, playerTurn: int, gameNode) -> void:
 	gameNode._updatePlayerTurn()
 	if playerTurn == 0:
 		button.text = "0"
 	else:
 		button.text = "X"
-	return playerTurn
 	
-func checkForWin(turn : int) -> bool:
+func checkForWin(playerTurn : int) -> bool:
 	for combination in winningCombinations:
 		var isWin = true
 		for j in range(3):
-			if tileState[combination[j]] != turn:
+			if tileState[combination[j]] != playerTurn:
 				isWin = false
 		if isWin:
-			return isWin
+			var button : Button = get_child(1)
+			var label : Label = get_child(3)
+			var grey : ColorRect = get_child(2)
+			button.visible = true
+			grey.visible = true
+			grey.modulate.a = 0.5;
+			button.disabled = true
+			if playerTurn == 0:
+				label.text = "0"
+			else:
+				label.text = "X"
+			gameFinished(playerTurn)
 	return false
 
 func _on_zoom_in_button_9_pressed():
-	var node = get_tree().current_scene.get_node("CameraController")
+	var node = get_node("/root/Multiplayer/MainScreenNode/CameraController")
 	node.zoom_button_press(get_node("ZoomInButton9"))
